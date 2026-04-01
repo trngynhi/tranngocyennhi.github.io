@@ -1,0 +1,729 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+/*first scene aka. the cover page*/
+    .scene-one{
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        background-color:#e4dcd1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .cover-envelope{
+        position: relative;
+        width: 60vw;
+        max-width: 700px;
+        height: auto;
+        left: 1%;
+        top: -5%;
+        z-index: 1;
+    }
+
+    .cover-polaroid{
+        position: absolute;
+        width: 720px;
+        height: 570px;
+        top: 50px;
+        left: -200px;
+        z-index: 2;
+        background: none;
+        transition: transform 0.4s ease;
+        cursor: pointer;
+    }
+    .cover-polaroid.tilted{
+        transform: rotate(6deg) scale(1.02);
+    }
+
+    .cover-flowers{
+        position: absolute;
+        width: 550px;
+        height: 700px;
+        top: -30px;
+        left: 80px;
+        z-index: 4;
+        background: none;
+        transition: transform 0.4s ease;
+        cursor: pointer;
+    }
+    .cover-flowers.tilted{
+        transform:rotate(-8deg) scale(1.02);
+    }
+
+    .cover-card-wrap{
+        position:absolute;
+        top:180px;
+        left:200px;
+        width:700px;
+        height:450px;
+        transition:transform 0.4s ease;
+        cursor:pointer;
+        z-index:3;
+    }
+    .cover-card-wrap.tilted{
+        transform: rotate(-8deg) scale(1.02);
+    }
+
+    .cover-card{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        background: none;
+    }
+        /*grain overlay for the whole page*/
+            body::before {
+                content:"";
+                position: fixed;
+                inset: 0;
+                pointer-events: none;
+                z-index: 9999;
+                background: url('images/grain-texture.png') repeat;
+                background-size: cover;
+                opacity: 0.5;
+                mix-blend-mode: overlay;
+            }
+/* second scene */
+    .scene-two {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        background-color: #d2bebe; /* pink scene */
+    }
+        .couple {
+            position: absolute;
+            width: 870px;
+            height: 300px;
+            top: 160px;
+            left: 140px;
+            z-index: 1;
+        }
+      .scene-two {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #d2bebe;
+    overflow: hidden;
+}
+
+.couple {
+    position: absolute;
+    width: 870px;
+    height: 300px;
+    top: 160px;
+    left: 140px;
+    z-index: 1;
+}
+
+.couple-text {
+    position: absolute;
+    top: 340px;      /* ⬅️ MORE DOWN */
+    right: -540px;   /* ⬅️ MUCH MORE RIGHT */
+    width: min(38vw, 520px);
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
+    font-size: clamp(24px, 2.2vw, 35px);
+    line-height: 1.5;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.couple-text-01 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(24vw, 340px);
+    display: inline-block;
+    line-height: 1.35;
+    text-align: right;
+}
+
+.love-red {
+    transition: color 0.5s ease;
+}
+
+.love-red:hover {
+    color: #b32e2f;
+}
+.couple-text-02 {
+    position: absolute;
+    top: 110px;
+    right: 170px;
+    width: min(28vw, 400px);
+    display: inline-block;
+    text-align: left;
+}
+
+.couple-text-03 {
+    position: absolute;
+    top: 235px;
+    right: 570px;
+    opacity: 0.3;
+    filter: blur(0.6px);
+    transition: opacity 0.4s ease, filter 0.35s ease;
+    cursor: pointer;
+}
+
+.couple-text-03.active {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.couple-text-04 {
+    position: absolute;
+    top: 235px;
+    right: 0;
+    opacity: 0.3;
+    filter: blur(0.6px);
+    transition: opacity 0.4s ease, filter 0.35s ease;
+    cursor: pointer;
+}
+
+.couple-text-04.active {
+    opacity: 1;
+    filter: blur(0);
+}
+
+.couple-text-05 {
+    position: absolute;
+    top: 305px;
+    right: 200px;
+    width: min(28vw, 400px);
+    text-align: right;
+}
+        .couple-red-thread {
+            position: absolute;
+            width: 1920px;
+            height: 1300px;
+            top: -350px;
+            left: -250px;
+            z-index: 2;
+        }
+        .couple-red-thread {
+            animation: threadmoving 6s ease-in-out infinite alternate;
+        }
+        @keyframes threadmoving {
+            0%{ transform: translateY(0px) rotate(0deg);}
+            25%{ transform: translateY(-4.5px) rotate(0.6deg);}
+            50%{ transform: translateY(-7px) rotate(-0.6deg);}
+            75%{ transform: translateY(-4.5px) rotate(0.6deg);}
+            100%{ transform: translateY(0px) rotate(0deg);}
+        }
+/* third scene */
+    .scene-three {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: url("images/room-bg.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #e4dcd1;
+        overflow: hidden; 
+    }
+    .scene-three img {
+        position: absolute;
+        display: block;
+    }
+        .bed-corner {
+            position: absolute;
+            width: 1200px;
+            max-width: 80vw;
+            top: 20px;
+            right: 0;
+            transform: translateX(10%);
+            z-index: 1;
+        }
+        .cat {
+            position: absolute;
+            width: 40%;
+            height: auto;
+            bottom: 2%;
+            right: -8%; 
+            z-index: 2;
+            animation: catbreath 3.5s ease-in-out infinite;
+            transform-origin: center center;
+        }
+
+            @keyframes catbreath {
+                0% {transform: translateY(0px) scale(1);}
+                50%{transform: translateY(-2px) scale(1.026);}
+                100% {transform: translateY(0px) scale(1);}
+            }
+        .bass-guitar {
+            position: absolute;
+            width: auto;
+            height: 820px;
+            left: 97px;
+            bottom: -8px;
+            z-index: 1;
+        }
+        .letter{
+            position: absolute;
+            width: 900px;
+            height: 710px;
+            right: 25%;
+            bottom: -5%;
+            z-index: 2;
+        }
+
+        .texts-on-letter{
+            position: absolute;
+            width: 777px;
+            height: 700px;
+            right: 25%;
+            bottom: -5%;
+            transform: translate(-8%,-4.5%);
+            opacity: 0.25;
+            filter: blur(0.5px);
+            transition: opacity 0.4s ease,filter 0.35s ease;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .texts-on-letter.active{
+            opacity: 1;
+            filter: blur(0);
+        }
+        .bed-text{
+            position: relative;
+            font-family: EB Garamond, serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 37.5px;
+            line-height: 1.5;
+            color: #000000;
+            z-index: 4;
+        }
+            .bed-text-01{
+                position: absolute;
+                top: 80px;
+                left: 420px;
+            }
+            .bed-text-02{
+                position: absolute;
+                top: 128px;
+                left: 1000px;
+            }
+                .crooked {
+                display: inline-block;
+                transform: rotate(-10deg);
+                transition: transform 0.4s ease;
+                cursor: pointer;
+                }
+
+                .crooked.straight {
+                transform: rotate(0deg);
+                }
+            .bed-text-03{
+                position: absolute;
+                top: 200px;
+                left: 490px;
+             }
+/* fourth scene */
+     .scene-four {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #e4dcd1;
+    overflow: hidden; 
+        }      
+        .pinky-fingers{
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            z-index: 0; 
+        }
+        .pinky-red-thread{
+            position: absolute;
+            width: 1720px;
+            height: 1260px;
+            top: -170px;
+            left: -22px;
+            z-index: 1;
+        }
+        .pinky-red-thread {
+        animation: threadmoving 3s ease-in-out infinite alternate;
+    }
+    @keyframes threadmoving {
+        0%{ transform: translateY(0px) rotate(0deg);}
+        25%{ transform: translateY(-4.5px) rotate(0.6deg);}
+        50%{ transform: translateY(-7px) rotate(-0.6deg);}
+        75%{ transform: translateY(-4.5px) rotate(0.6deg);}
+        100%{ transform: translateY(0px) rotate(0deg);}
+    }
+
+        .pinky-text{
+            position: relative;
+            font-family: EB Garamond, serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 1.5;
+            color: #000000;
+            z-index: 3;
+        }
+        .pinky-text-01 {
+            position: absolute;
+            top: 50px;
+            left: 190px;
+        }
+        .pinky-text-02 {
+            position: absolute;
+            top: 100px;
+            left: 240px;
+        }
+       .pinky-text-03 {
+            position: absolute;
+            top: 130px;
+            left: 1020px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            line-height: 1.35;
+            z-index: 2;
+        }
+            .oval-mask {
+            position: absolute;
+            top: 180px;
+            left: 948px;
+            width: 448px;
+            height: 550px;
+            border-radius: 50%;
+            overflow: hidden;   
+            border: none;
+            z-index: 3;
+            }
+            .oval-mask span {
+            position: absolute;
+            display: block;
+            font-family: "EB Garamond", serif;
+            font-size: 35px;
+            line-height: 1.35;
+            color: #ffffff;
+            white-space: nowrap;
+            }
+            .oval-mask span:nth-child(1) {
+            top: -69px;
+            left: 133px;
+            }
+            .oval-mask span:nth-child(2) {
+            top: -0.75px;
+            left: 72.5px;
+            }
+        .pinky-text-04{
+            position: absolute;
+            width: 400px;
+            top: 800px;
+            left: 290px;
+        }
+        .pinky-text-05{
+            position: absolute;
+            top: 850px;
+            left: 1030px;
+        }
+            .blur-belong {
+                transition: filter 0.4s ease;
+                opacity: 1;
+            }
+            .blur-belong:hover {
+            filter: blur(1px);
+            opacity: 0.75;
+            text-shadow: 
+                0 0 6px #ffffff,
+                0 0 12px #ffffff80;
+            }
+
+            .drifting-far {
+                opacity: 0.3;
+                filter: blur(0.6px);
+                transition: opacity 0.4s ease, filter 0.35s ease;
+                cursor: pointer;
+            }
+            .drifting-far.active {
+            opacity: 1;
+            filter: blur(0);
+            }
+/* fifth scene */
+    .scene-five{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-color: #d2bebe;
+        overflow: hidden; 
+    }
+    .scene-five img {
+    position: absolute;
+    display: block;
+    }
+    .mugs-scene-01 {
+        position: absolute;
+        width: 700px;
+        height: 670px;
+        left: 120px;
+        bottom: 30px;
+        transform: rotate(10deg) translateX(0);
+        transition: transform 0.9s ease;
+        z-index: 1;
+            filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.2))
+                    drop-shadow(0 0 18px rgba(255, 255, 255, 0.38));
+    }
+    .mugs-scene-02 {
+        position: absolute;
+        width: 700px;
+        height: 670px;
+        top: 140px;
+        right: 100px;
+        transform: rotate(-10deg) translateX(0);
+        transition: transform 0.9s ease;
+        z-index: 1;
+            filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.2))
+                    drop-shadow(0 0 18px rgba(255, 255, 255, 0.38));
+        }
+        .scene-five.pulled-close .mugs-scene-01 {
+            transform: rotate(10deg) translateX(100px);
+        }
+        .scene-five.pulled-close .mugs-scene-02 {
+            transform: rotate(-10deg) translateX(-100px);
+        }
+    .mugs-text{
+        position: relative;
+        font-family: EB Garamond, serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 1.5;
+        color: #000000;
+        z-index: 3;
+    }
+    .mugs-text-01{
+        position: absolute;
+        top: 190px;
+        left: 280px;
+    }
+    .mugs-text-02{
+        position: absolute;
+        top: 240px;
+        left: 280px;
+    }
+        .heart-red {
+            transition: color 0.5s ease;
+        }
+        .heart-red:hover {
+            color: #b32e2f;
+        }
+    .mugs-text-03{
+        position: absolute;
+        top: 800px;
+        left: 1200px;
+    }
+    .mugs-text-04{
+        position: absolute;
+        top: 850px;
+        left: 1120px;
+    }
+    .mugs-text-05{
+        position: absolute;
+        top: 110px;
+        left: 690px;
+    }
+    .mugs-text-06{
+        position: absolute;
+        top: 160px;
+        left: 500px;
+    }
+     .mugs-text-07{
+        position: absolute;
+        top: 175px;
+        left: 1030px;
+    }
+    .mugs-text-01, 
+    .mugs-text-02, 
+    .mugs-text-03,
+    .mugs-text-04 {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    }
+    .scene-five.pulled-close .mugs-text-01,
+    .scene-five.pulled-close .mugs-text-02,
+    .scene-five.pulled-close .mugs-text-03,
+    .scene-five.pulled-close .mugs-text-04 {
+    opacity: 0;
+    }
+    .mugs-text-05, 
+    .mugs-text-06, 
+    .mugs-text-07 {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    }
+    .scene-five.pulled-close .mugs-text-05,
+    .scene-five.pulled-close .mugs-text-06,
+    .scene-five.pulled-close .mugs-text-07 {
+    opacity: 1;
+    }
+
+        .mugs-text-06, 
+        .mugs-text-07 {
+            position: absolute;
+            transition: color 0.6s ease;
+            display: inline-block;
+            padding: 2px 4px;
+            }
+        .mugs-text-06:hover, 
+        .mugs-text-07:hover {
+            color: #ffffff;
+            }
+/* sixth scene */
+    .scene-six{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-color: #bcbcbc;
+        overflow: hidden; 
+    }
+
+    .silhouette-01,
+    .silhouette-02 {
+    position: absolute;
+    width: 750px;
+    height: 1010px;
+    top: 95px;
+    left: 50%;
+    z-index: 1;
+    filter:
+        drop-shadow(0 0 10px rgba(255, 255, 255, 0.9))
+        drop-shadow(0 0 25px rgba(255, 255, 255, 0.6))
+        drop-shadow(0 0 50px rgba(255, 255, 255, 0.35));
+    transition: transform 1s ease-in-out;
+}
+  
+.silhouette-01 {
+    transform: translateX(-120%);
+}
+.silhouette-02 {
+    transform: translateX(20%);
+}
+      .scene-six.pulled-close .silhouette-01 {
+    transform: translateX(-480px);
+    }
+
+    .scene-six.pulled-close .silhouette-02 {
+        transform: translateX(-240px);
+    }
+
+    .silhouette-text{
+            position: relative;
+            font-family: EB Garamond, serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 1.5;
+            color: #000000;
+            z-index: 3;
+    }
+            .silhouette-text-01{
+                position: absolute;
+                top: 130px;
+                left: 500px;
+            }
+            .silhouette-text-02{
+                position: absolute;
+                top: 80px;
+                left: 750px;
+            }
+            .silhouette-text-03{
+                position: absolute;
+                top: 130px;
+                left: 1020px;
+            }
+            .silhouette-text-04{
+                position: absolute;
+                top: 180px;
+                left: 1080px;
+            }
+            .silhouette-text-05{
+                position: absolute;
+                top: 130px;
+                left: 550px;
+            }
+            .silhouette-text-06{
+                position: absolute;
+                top: 180px;
+                left: 950px;
+            }
+
+            .silhouette-text-03,
+            .silhouette-text-04,
+            .silhouette-text-06 {
+            position: absolute;
+            transition: color 0.6s ease;
+            display: inline-block;
+            padding: 2px 4px;
+            }
+
+            .silhouette-text-03:hover,
+            .silhouette-text-04:hover,
+            .silhouette-text-06:hover {
+                color: #ffffff;
+            }
+    
+    .scene-six.pulled-close .silhouette-text-03,
+    .scene-six.pulled-close .silhouette-text-04 {
+        filter: blur(0);
+    }
+
+    .silhouette-text-01,
+    .silhouette-text-02,
+    .silhouette-text-03,
+    .silhouette-text-04 {
+        opacity: 1;
+    }
+    .silhouette-text-05,
+    .silhouette-text-06 {
+        opacity: 0;
+        transition: opacity 0.6s ease, color 0.6s ease;
+    }
+    .scene-six.pulled-close .silhouette-text-01,
+    .scene-six.pulled-close .silhouette-text-02,
+    .scene-six.pulled-close .silhouette-text-03,
+    .scene-six.pulled-close .silhouette-text-04 {
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+    .scene-six.pulled-close .silhouette-text-05,
+    .scene-six.pulled-close .silhouette-text-06 {
+        opacity: 1;
+    }
+        .silhouette-red-thread{
+            position: absolute;
+            top: -2vh;
+            left: -2vw;
+            width: 104vw;
+            height: 104vh;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.675s ease;
+            pointer-events: none;
+            object-fit: fill;
+        }
+            .scene-six.pulled-close .silhouette-red-thread {
+                opacity: 1;
+                animation: threadmoving 3s ease-in-out infinite alternate;
+            }
+            @keyframes threadmoving {
+                0%{ transform: translateY(0px) rotate(0deg);}
+                25%{ transform: translateY(-4.5px) rotate(0.6deg);}
+                50%{ transform: translateY(-7px) rotate(-0.6deg);}
+                75%{ transform: translateY(-4.5px) rotate(0.6deg);}
+                100%{ transform: translateY(0px) rotate(0deg);}
+            }
